@@ -2960,6 +2960,34 @@ const heading3 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
     lineNumber: 12,
     columnNumber: 16
 }, undefined);
+const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "title",
+        children: [
+            head1,
+            head2,
+            heading2,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: "lorem"
+                }, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 21,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 20,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 16,
+        columnNumber: 13
+    }, undefined);
+};
+_c = Header;
 const div = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
     id: "title"
 }, [
@@ -2970,8 +2998,16 @@ const div = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
     heading2,
     heading3
 ]);
+_c1 = div;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(div);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+    fileName: "app.js",
+    lineNumber: 27,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "div");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {
