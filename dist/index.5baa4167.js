@@ -3700,26 +3700,26 @@ const resturantList = [
         subtype: "basic"
     }
 ];
-const RestaurantCard = (props)=>{
+const RestaurantCard = ({ name , cuisines , avgRating , deliveryTime , lastMileTravelString , cloudinaryImageId  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + props.restaurant.data?.cloudinaryImageId
+                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 760,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: props.restaurant.data?.name
+                children: name
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 766,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: props.restaurant.data?.cuisines.join(" , ")
+                children: cuisines.join(" , ")
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 767,
@@ -3727,7 +3727,7 @@ const RestaurantCard = (props)=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: [
-                    props.restaurant.data?.avgRating,
+                    avgRating,
                     " ratings"
                 ]
             }, void 0, true, {
@@ -3737,7 +3737,7 @@ const RestaurantCard = (props)=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
                 children: [
-                    props.restaurant.data?.deliveryTime,
+                    deliveryTime,
                     " deliveryTime MINS"
                 ]
             }, void 0, true, {
@@ -3747,7 +3747,7 @@ const RestaurantCard = (props)=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
                 children: [
-                    props.restaurant.data?.lastMileTravelString,
+                    lastMileTravelString,
                     " kms"
                 ]
             }, void 0, true, {
@@ -3854,51 +3854,16 @@ _c2 = Header;
 const Body = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "resturant-list",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                restaurant: resturantList[0]
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 810,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                restaurant: resturantList[1]
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 811,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                restaurant: resturantList[2]
+        children: resturantList.map((restaurant)=>{
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                ...restaurant.data
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 812,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                restaurant: resturantList[3]
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 813,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                restaurant: resturantList[4]
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 814,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
-                restaurant: resturantList[5]
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 815,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
+                columnNumber: 21
+            }, undefined);
+        })
+    }, void 0, false, {
         fileName: "app.js",
         lineNumber: 809,
         columnNumber: 5
@@ -3910,7 +3875,7 @@ const Footer = ()=>{
         children: "Footer"
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 821,
+        lineNumber: 823,
         columnNumber: 10
     }, undefined);
 };
@@ -3920,17 +3885,17 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 826,
+                lineNumber: 828,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 827,
+                lineNumber: 829,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 828,
+                lineNumber: 830,
                 columnNumber: 7
             }, undefined)
         ]
@@ -3940,7 +3905,7 @@ _c5 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 834,
+    lineNumber: 836,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3, _c4, _c5;
