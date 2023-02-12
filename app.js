@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
-// Config api
+// Config Driven UI
 const resturantList = [
   {
     type: "restaurant",
@@ -755,17 +754,23 @@ const resturantList = [
   },
 ];
 
-const RestaurantCard=()=>{
-    return(
-        <div className="card">
-            <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+resturantList[0].data?.cloudinaryImageId}/>
-            <h2>{resturantList[0].data?.name}</h2>
-            <h3>{resturantList[0].data?.cuisines.join(" , ")}</h3>
-            <h4>{resturantList[0].data?.avgRating} ratings</h4>
-
-        </div>
-    )
-}
+const RestaurantCard = (props) => {
+  return (
+    <div className="card">
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          props.restaurant.data?.cloudinaryImageId
+        }
+      />
+      <h2>{props.restaurant.data?.name}</h2>
+      <h3>{props.restaurant.data?.cuisines.join(" , ")}</h3>
+      <h4>{props.restaurant.data?.avgRating} ratings</h4>
+      <h5>{props.restaurant.data?.deliveryTime} deliveryTime MINS</h5>
+      <h6>{props.restaurant.data?.lastMileTravelString} kms</h6>
+    </div>
+  );
+};
 
 const Title = () => {
   return (
@@ -798,18 +803,18 @@ const Header = () => {
   );
 };
 
+//props- properties
 const Body = () => {
-  return <div className="resturant-list"><RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/>
-  <RestaurantCard/></div>;
+  return (
+    <div className="resturant-list">
+      <RestaurantCard restaurant={resturantList[0]} />
+      <RestaurantCard restaurant={resturantList[1]} />
+      <RestaurantCard restaurant={resturantList[2]} />
+      <RestaurantCard restaurant={resturantList[3]} />
+      <RestaurantCard restaurant={resturantList[4]} />
+      <RestaurantCard restaurant={resturantList[5]} />
+    </div>
+  );
 };
 
 const Footer = () => {
