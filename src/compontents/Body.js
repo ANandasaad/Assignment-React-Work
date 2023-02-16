@@ -1,46 +1,38 @@
+import { useState } from "react";
+import { resturantList } from "../Constant";
+import RestaurantCard from "./RestaurantCard";
 
-
-import { resturantList,IMG_CDN_URL } from "../Constant";
-const RestaurantCard = ({
-    name,
-    cuisines,
-    avgRating,
-    deliveryTime,
-    lastMileTravelString,
-    cloudinaryImageId,
-  }) => {
-    return (
-      <div className="card">
-        <img
-          src={IMG_CDN_URL
-             +
-            cloudinaryImageId
-          }
-        />
-        <h2>{name}</h2>
-        <h3>{cuisines.join(" , ")}</h3>
-        <h4>{avgRating} ratings</h4>
-        <h5>{deliveryTime} deliveryTime MINS</h5>
-        <h6>{lastMileTravelString} kms</h6>
-      </div>
-    );
-  };
 
 
 const Body = () => {
-    return (
-      <>
-      <div>
-      <input type="text" placeholder="search"/> 
-      <button>search</button>
+  // let searchText = "KFC";
+
+  const [searchText,setSearch]=useState();// useState returns the array and its function
+
+  return (
+    <>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="search"
+          value={searchText}
+          onChange={(e)=>{
+            //e.taeget value==what ever you in input..
+            setSearch(e.target.value);
+          }
+          
+          }
+        />
+        <button className="search-button">search -{searchText}</button>
       </div>
       <div className="resturant-list">
         {resturantList.map((restaurant) => {
-          return <RestaurantCard {...restaurant.data} />;
+          return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
         })}
       </div>
-      </>
-    );
-  };
+    </>
+  );
+};
 
-  export default Body;
+export default Body;

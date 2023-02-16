@@ -35,4 +35,8 @@ img {
   width: 100%;
 }
 
+.search-container, .search-button {
+  margin: 10px;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
