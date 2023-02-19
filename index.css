@@ -3,11 +3,11 @@
     justify-content: space-between;
     border:1px solid black
 }
-ul{
+.nav>ul{
     display: flex;
 
 }
-ul>li{
+.nav>ul>li{
     list-style-type: none;
     padding: 10px;
     margin: 10px;
@@ -38,4 +38,15 @@ img{
 }
 .search-button{
     margin: 10px;
+}
+.resturant-menu{
+    display: flex;
+    margin: 10px;
+}
+.shimmer-list{
+    width: 200px;
+    padding:10px;
+    margin: 30px;
+    height:200px;
+    background-color: lightgray;
 }
