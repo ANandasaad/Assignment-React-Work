@@ -5,6 +5,7 @@
 }
 .nav>ul{
     display: flex;
+   
 
 }
 .nav>ul>li{
@@ -49,4 +50,7 @@ img{
     margin: 30px;
     height:200px;
     background-color: lightgray;
+}
+Link{
+    text-decoration: none;
 }

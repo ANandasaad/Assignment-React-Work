@@ -6,17 +6,18 @@ import Shimmer from "./Shimmer";
 const RestaurantMenu = () => {
   //How to dynamic url
   const params = useParams();
-  const {resId}=params;
+  const {resId} =params;
 
   const [resturantMenu, setRestaurnatsMenu] = useState();
 
   useEffect(() => {
+    // console.log(params);
     getRestaurant();
   }, []);
 
   async function getRestaurant() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=28.69819739999999&lng=77.41712369999999&menuId=653519"
+      "https://www.swiggy.com/dapi/menu/v4/full?lat=28.69819739999999&lng=77.41712369999999&menuId="+resId
     );
     const json = await data.json();
     console.log(json.data);

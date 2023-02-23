@@ -36,7 +36,7 @@ const Body = () => {
   // Conditional Rendering
   if (!allrestaurnts) return null;
 
-  // if (restaurants?.length === 0) return <h1>Restaurant Not Found !!</h1>;
+  if (restaurants?.length === 0) return <h1>Restaurant Not Found !!</h1>;
 
   return restaurants?.length === 0 ? (
     <Shimmer />
