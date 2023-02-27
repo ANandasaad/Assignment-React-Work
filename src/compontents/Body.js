@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import { resturantList } from "../Constant";
+import { FETCH_DATA_URL, resturantList } from "../Constant";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
-function filterData(searchText, allrestaurnts) {
-  return allrestaurnts.filter((restaurant) =>
-    restaurant?.data?.name?.includes(searchText)
-  );
-}
+import { filterData } from "../utils/FilterData";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   // let searchText = "KFC";
@@ -16,22 +13,22 @@ const Body = () => {
   const [searchText, setSearch] = useState(); // useState returns the array and its function
   const [restaurants, setRestaurnats] = useState([]); // for filtering the data...
   const [allrestaurnts, setAllRestaurnats] = useState([]); // for storing the orginal data of resturant...
-  console.log("render");
 
   useEffect(() => {
-    console.log("use Effect");
     getRestaurants();
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.756576426319075&lng=76.63745194673538&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(FETCH_DATA_URL);
     const json = await data.json();
-    console.log(json);
 
     setAllRestaurnats(json?.data?.cards[2]?.data?.data?.cards);
     setRestaurnats(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <h1>is OFFline</h1>;
   }
   // Conditional Rendering
   if (!allrestaurnts) return null;
