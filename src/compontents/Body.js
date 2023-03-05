@@ -32,17 +32,17 @@ const Body = () => {
   }
   // Conditional Rendering
   if (!allrestaurnts) return null;
-
-  if (restaurants?.length === 0) return <h1>Restaurant Not Found !!</h1>;
+   
+  // if (restaurants?.length === 0) return <h1>Restaurant Not Found !!</h1>;
 
   return restaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="my-1  bg-pink-50 shadow-sm">
         <input
           type="text"
-          className="search-input"
+          className="my-1 mx-2 bg-slate-50 shadow-lg w-[200px] p-[2px] rounded"
           placeholder="search"
           value={searchText}
           onChange={(e) => {
@@ -51,7 +51,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-button"
+          className="bg-purple-900 hover:bg-purple-600 rounded-md w-[80px] shadow-lg p-[2px] text-white"
           onClick={() => {
             // need to filter the data
             const data = filterData(searchText, allrestaurnts);
@@ -62,7 +62,7 @@ const Body = () => {
           search
         </button>
       </div>
-      <div className="resturant-list">
+      <div className="flex flex-wrap justify-center">
         {restaurants.map((restaurant) => {
           return (
             <Link
@@ -73,6 +73,7 @@ const Body = () => {
             </Link>
           );
         })}
+        
       </div>
     </>
   );
