@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Logo from "../assets/FoodHaveli.png"
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
+
+
 
 const Title = () => {
   return (
@@ -19,6 +22,8 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedIn, setIsLogged] = useState(false);
+
+  const {user}=useContext(UserContext);
   return (
     <div className="flex justify-between border-2 bg-pink-50 shadow-lg">
       <Title />
@@ -30,6 +35,7 @@ const Header = () => {
           <li><Link to="/instamart">Instamart</Link></li>
           <li>Cart</li>
         </ul>
+        {user.name}
       </div>
       {isLoggedIn ? (
         <button className="mx-[20px]" onClick={() => setIsLogged(false)}>Logout</button>

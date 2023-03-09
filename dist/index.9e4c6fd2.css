@@ -352,12 +352,12 @@ img, video {
   border-radius: .375rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-black {
@@ -390,6 +390,10 @@ img, video {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
+.p-2 {
+  padding: .5rem;
+}
+
 .p-\[10px\] {
   padding: 10px;
 }
@@ -400,10 +404,6 @@ img, video {
 
 .p-\[5px\] {
   padding: 5px;
-}
-
-.p-2 {
-  padding: .5rem;
 }
 
 .text-3xl {
