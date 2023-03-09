@@ -7,6 +7,7 @@ const RestaurantCard = ({
     deliveryTime,
     lastMileTravelString,
     cloudinaryImageId,
+
   }) => {
     return (
       <div className="w-54 h-52 my-8 box-border" >
@@ -15,6 +16,7 @@ const RestaurantCard = ({
         <h2 className="font-bold">{name}</h2>
         <h3>{cuisines.join(" , ")}</h3>
         <h4>{avgRating} ratings</h4>
+      
         </div>
        
       </div>
