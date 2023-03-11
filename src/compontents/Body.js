@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FETCH_DATA_URL, resturantList } from "../Constant";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 import { filterData } from "../utils/FilterData";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // let searchText = "KFC";
@@ -13,6 +14,7 @@ const Body = () => {
   const [searchText, setSearch] = useState(); // useState returns the array and its function
   const [restaurants, setRestaurnats] = useState([]); // for filtering the data...
   const [allrestaurnts, setAllRestaurnats] = useState([]); // for storing the orginal data of resturant...
+  const {user, setUser}=useContext(UserContext);
 
   useEffect(() => {
     getRestaurants();
@@ -50,6 +52,7 @@ const Body = () => {
             setSearch(e.target.value);
           }}
         />
+      
         <button
           className="bg-purple-900 hover:bg-purple-600 rounded-md w-[80px] shadow-lg p-[2px] text-white"
           onClick={() => {
@@ -61,6 +64,8 @@ const Body = () => {
         >
           search
         </button>
+        <input value={user.name} onChange={e=>setUser({name:e.target.value,
+        email:"newEmail@gmail.com"})}></input>
       </div>
       <div className="flex flex-wrap justify-center">
         {restaurants.map((restaurant) => {

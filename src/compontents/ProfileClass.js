@@ -1,5 +1,5 @@
 import React from "react";
-
+import UserContext from "../utils/UserContext";
 class ProfileClass extends React.Component{
 
     constructor(props)
@@ -56,6 +56,9 @@ class ProfileClass extends React.Component{
                     count:1
                 })
             }}>setCount</button> */}
+            <UserContext.Consumer>
+                {(user)=><h4 className="font-bold">{user.name}</h4>}
+            </UserContext.Consumer>
             </div>
         )
     }
