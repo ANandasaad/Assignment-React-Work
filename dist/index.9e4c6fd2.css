@@ -233,6 +233,10 @@ img, video {
   margin: 2rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-2 {
   margin-left: .5rem;
   margin-right: .5rem;
@@ -266,6 +270,11 @@ img, video {
 .my-\[5px\] {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .box-border {
@@ -394,6 +403,16 @@ img, video {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
+
+.bg-green-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 253 244 / var(--tw-bg-opacity));
+}
+
 .p-2 {
   padding: .5rem;
 }
@@ -408,6 +427,14 @@ img, video {
 
 .p-\[5px\] {
   padding: 5px;
+}
+
+.p-1 {
+  padding: .25rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .text-3xl {

@@ -12,6 +12,10 @@ import ProfileClass from "./compontents/ProfileClass";
 import Shimmer from "./compontents/Shimmer";
 import UserContext from "./utils/UserContext";
 // import Instamart from "./compontents/Instamart";
+import Cart from "./compontents/Cart";
+
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const Instamart = lazy(() => import("./compontents/Instamart.js"));
 
@@ -22,12 +26,14 @@ const AppLayout = () => {
   });
  
   return (
+    <Provider store={store}>
     <UserContext.Provider value={{ user: user, setUser: setUser }}>
       <Header />
       {/* {outlet}*/}
       <Outlet />
       <Footer />
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -66,6 +72,10 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart/>,
       },
     ],
   },
