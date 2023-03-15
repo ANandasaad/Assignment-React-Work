@@ -43,6 +43,7 @@ const Body = () => {
     <>
       <div className="my-1  bg-pink-50 shadow-sm">
         <input
+         data-testid="search-input"
           type="text"
           className="my-1 mx-2 bg-slate-50 shadow-lg w-[200px] p-[2px] rounded"
           placeholder="search"
@@ -54,7 +55,9 @@ const Body = () => {
         />
       
         <button
+          
           className="bg-purple-900 hover:bg-purple-600 rounded-md w-[80px] shadow-lg p-[2px] text-white"
+          data-testid="btn"
           onClick={() => {
             // need to filter the data
             const data = filterData(searchText, allrestaurnts);
@@ -67,7 +70,7 @@ const Body = () => {
         <input value={user.name} onChange={e=>setUser({name:e.target.value,
         email:"newEmail@gmail.com"})}></input>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center" data-testid="res-list">
         {restaurants.map((restaurant) => {
           return (
             <Link

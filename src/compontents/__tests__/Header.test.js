@@ -41,7 +41,7 @@ test("Cart contains Zero products",()=>{
 
 
 
-   const cart=header.getByTestId("cart1");
+   const cart=header.getByTestId("cart");
    console.log(cart);
    expect(cart.innerHTML).toBe(" Cart -0 items");
 
