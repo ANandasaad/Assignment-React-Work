@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import Logo from "../assets/FoodHaveli.png";
+// import Logo from "../assets/FoodHaveli.png";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
@@ -14,6 +14,7 @@ const Title = () => {
           className="h-[100px] w-[100px]"
           alt="Food Haveli"
           src="https://i.pinimg.com/originals/28/65/07/28650724b95899bd15c7266906a738fa.png"
+          data-testid="logo"
         />
       </a>
     </div>
@@ -45,7 +46,7 @@ const Header = () => {
           <li>
             <Link to="/instamart">Instamart</Link>
           </li>
-          <li> <Link to="/cart"> Cart -{cartItems.length} items</Link></li>
+          <li > <Link to="/cart" data-testid="cart"> Cart -{cartItems.length} items</Link></li>
         </ul>
         {user.name}
       </div>
