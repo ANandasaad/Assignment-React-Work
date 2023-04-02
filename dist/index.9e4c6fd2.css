@@ -281,6 +281,16 @@ img, video {
   margin-bottom: 5px;
 }
 
+.my-\[10px\] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -307,6 +317,34 @@ img, video {
 
 .h-\[100px\] {
   height: 100px;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
+.h-60 {
+  height: 15rem;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
+.h-\[270px\] {
+  height: 270px;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-\[275px\] {
+  height: 275px;
+}
+
+.h-\[280px\] {
+  height: 280px;
 }
 
 .w-52 {
