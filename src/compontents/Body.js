@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { FETCH_DATA_URL, resturantList } from "../constant";
+import { FETCH_DATA_URL } from "../constant";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";

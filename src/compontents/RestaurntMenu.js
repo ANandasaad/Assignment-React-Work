@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { json, useParams } from "react-router-dom";
-import { IMG_CDN_URL } from "../Constant";
+import { IMG_CDN_URL } from "../constant";
 import { addItem } from "../utils/cartSlice";
 import useRestaurant from "../utils/useRestaurant";
 import Shimmer from "./Shimmer";

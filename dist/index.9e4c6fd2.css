@@ -261,14 +261,14 @@ img, video {
   margin-bottom: .25rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
-}
-
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .my-\[30px\] {
@@ -279,16 +279,6 @@ img, video {
 .my-\[5px\] {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-.my-\[10px\] {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .box-border {
@@ -315,32 +305,12 @@ img, video {
   height: 14rem;
 }
 
-.h-\[100px\] {
-  height: 100px;
-}
-
-.h-72 {
-  height: 18rem;
-}
-
 .h-60 {
   height: 15rem;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
-.h-\[270px\] {
-  height: 270px;
-}
-
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-\[275px\] {
-  height: 275px;
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[280px\] {
