@@ -1,4 +1,4 @@
-import { IMG_CDN_URL } from "../Constant";
+import { IMG_CDN_URL } from "../constant";
 
 const FoodItem = ({
     name,
